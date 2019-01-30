@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{95CE56DD-05B4-4844-AC34-83D6EBE4C638}</ProjectGuid>
+    <Keyword>MakeFileProj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <NMakeBuildCommandLine>make DEBUG=1</NMakeBuildCommandLine>
+    <NMakeOutput>$(ProjectName).elf</NMakeOutput>
+    <NMakeCleanCommandLine>make clean</NMakeCleanCommandLine>
+    <NMakeReBuildCommandLine>make clean all</NMakeReBuildCommandLine>
+    <NMakePreprocessorDefinitions>ARM7;WIN32;_DEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+    <NMakeIncludeSearchPath>./include;$(DEVKITARM)\arm-none-eabi\include;$(DEVKITPRO)\msys2\usr\bin;$(NMakeIncludeSearchPath)</NMakeIncludeSearchPath>
+    <IncludePath>./include;$(DEVKITARM)\arm-none-eabi\include;$(VC_IncludePath);$(WindowsSDK_IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <NMakeBuildCommandLine>make DEBUG=0</NMakeBuildCommandLine>
+    <NMakeOutput>$(ProjectName).gba</NMakeOutput>
+    <NMakeCleanCommandLine>make clean</NMakeCleanCommandLine>
+    <NMakeReBuildCommandLine>make clean all</NMakeReBuildCommandLine>
+    <NMakePreprocessorDefinitions>ARM7;WIN32;NDEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+    <NMakeIncludeSearchPath>$(DEVKITARM)\arm-none-eabi\include;$(NMakeIncludeSearchPath)</NMakeIncludeSearchPath>
+    <IncludePath>$(ProjectDir)include;$(DEVKITARM)\arm-none-eabi\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Text Include="readme.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="source\GameStates.c" />
+    <ClCompile Include="source\gba_Background.c" />
+    <ClCompile Include="source\gba_Collision.c" />
+    <ClCompile Include="source\gba_Drawings.c" />
+    <ClCompile Include="source\gba_Input.c" />
+    <ClCompile Include="source\gba_Math.c" />
+    <ClCompile Include="source\gba_MathUtil.c" />
+    <ClCompile Include="source\gba_OAM.c" />
+    <ClCompile Include="source\gba_Video.c" />
+    <ClCompile Include="source\Intro1.c" />
+    <ClCompile Include="source\Intro2.c" />
+    <ClCompile Include="source\Intro3.c" />
+    <ClCompile Include="source\Intro4.c" />
+    <ClCompile Include="source\Intro5.c" />
+    <ClCompile Include="source\main.c" />
+    <ClCompile Include="source\MainMenu.c" />
+    <ClCompile Include="source\ParticleEffects.c" />
+    <ClCompile Include="source\particles.c" />
+    <ClCompile Include="source\Pause.c" />
+    <ClCompile Include="source\PlayerSprite1.c" />
+    <ClCompile Include="source\SeasonTree.c" />
+    <ClCompile Include="source\sinlut.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\BG_Collisions.h" />
+    <ClInclude Include="include\BG_Maps.h" />
+    <ClInclude Include="include\BG_Palette.h" />
+    <ClInclude Include="include\BG_Tiles.h" />
+    <ClInclude Include="include\GameStates.h" />
+    <ClInclude Include="include\gba_Assets.h" />
+    <ClInclude Include="include\gba_Background.h" />
+    <ClInclude Include="include\gba_Collision.h" />
+    <ClInclude Include="include\gba_Core.h" />
+    <ClInclude Include="include\gba_Defines.h" />
+    <ClInclude Include="include\gba_Drawings.h" />
+    <ClInclude Include="include\gba_Input.h" />
+    <ClInclude Include="include\gba_Math.h" />
+    <ClInclude Include="include\gba_MathUtil.h" />
+    <ClInclude Include="include\gba_OAM.h" />
+    <ClInclude Include="include\gba_Video.h" />
+    <ClInclude Include="include\Intellisense.h" />
+    <ClInclude Include="include\Intro1.h" />
+    <ClInclude Include="include\Intro2.h" />
+    <ClInclude Include="include\Intro3.h" />
+    <ClInclude Include="include\Intro4.h" />
+    <ClInclude Include="include\Intro5.h" />
+    <ClInclude Include="include\MainMenu.h" />
+    <ClInclude Include="include\ParticleEffects.h" />
+    <ClInclude Include="include\particles.h" />
+    <ClInclude Include="include\Pause.h" />
+    <ClInclude Include="include\PlayerSprite1.h" />
+    <ClInclude Include="include\SeasonTree.h" />
+    <ClInclude Include="include\sinlut.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Makefile" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

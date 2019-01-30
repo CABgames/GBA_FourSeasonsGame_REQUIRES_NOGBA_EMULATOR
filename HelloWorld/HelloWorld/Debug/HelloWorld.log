@@ -1,0 +1,18 @@
+﻿  main.cpp
+  arm-none-eabi-g++ -MMD -MP -MF /f/GBA/HelloWorld/HelloWorld/build/main.d -gdwarf-2 -Wall -mcpu=arm7tdmi -mtune=arm7tdmi -mthumb -mthumb-interwork -iquote /f/GBA/HelloWorld/HelloWorld/include -I/c/devkitPro/libgba/include -I/f/GBA/HelloWorld/HelloWorld/build -fno-rtti -fno-exceptions -c /f/GBA/HelloWorld/HelloWorld/source/main.cpp -o main.o 
+  F:/GBA/HelloWorld/HelloWorld/source/main.cpp: In function 'int main()':
+F:/GBA/HelloWorld/HelloWorld/source/main.cpp(300,11): warning GFC433946: statement has no effect [-Wunused-value]
+      p1Ypos - 2;
+      ~~~~~~~^~~
+F:/GBA/HelloWorld/HelloWorld/source/main.cpp(304,11): warning GFC433946: statement has no effect [-Wunused-value]
+      p1Ypos + 2;
+      ~~~~~~~^~~
+F:/GBA/HelloWorld/HelloWorld/source/main.cpp(309,11): warning GFC433946: statement has no effect [-Wunused-value]
+      p2Ypos - 2;
+      ~~~~~~~^~~
+F:/GBA/HelloWorld/HelloWorld/source/main.cpp(313,11): warning GFC433946: statement has no effect [-Wunused-value]
+      p2Ypos + 2;
+      ~~~~~~~^~~
+  linking cartridge
+  built ... HelloWorld.gba
+  ROM fixed!
