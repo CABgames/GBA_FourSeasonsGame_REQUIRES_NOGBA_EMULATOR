@@ -1,0 +1,1 @@
+# GBA_FourSeasonsGame_REQUIRES_NOGBA_EMULATOR
